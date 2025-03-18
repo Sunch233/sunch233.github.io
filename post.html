@@ -15,6 +15,7 @@
                 document.getElementById('posts-div').innerHTML = '<h1>invalid post id!<br>未知文章序号</h1>';
                 throw new Error('invalid post id!');
             }
+            document.getElementById('posts-div').innerHTML = '<h2>loading...</h2>';
             index = parseInt(index);
 
             fetch('/posts/posts.json')
