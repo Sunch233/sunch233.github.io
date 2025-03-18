@@ -1,0 +1,133 @@
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000000;
+    background: #c0c0c0 url('background.jpg'); /* 使用重复的纹理背景 */
+    background-blend-mode: multiply;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    background: #ffffff;
+    border: 2px solid #000080;
+}
+
+td, th {
+    padding: 8px;
+    border: 1px solid #808080;
+    background-color: #f0f0f0;
+}
+
+a:link {
+    color: #0000FF;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #800080;
+}
+
+a:hover {
+    color: #FF0000;
+    text-decoration: none;
+}
+
+h1.notice {
+    font-family: Arial, sans-serif;
+    color: #FF0000;
+    text-shadow: 2px 2px #000000;
+    font-size: 28px;
+    margin: 15px 0;
+    padding: 5px;
+    background: linear-gradient(to bottom, #ffff88 0%,#ffcc00 100%);
+    border: 3px outset #cccccc;
+}
+
+h2.notice {
+    font-family: "Comic Sans MS", cursive;
+    color: #000080;
+    font-size: 24px;
+    border-bottom: 2px dashed #808080;
+}
+
+/* 导航菜单 */
+.navbar {
+    background: #000080;
+    padding: 8px;
+    margin: 15px 0;
+}
+
+.navbar a {
+    color: #ffffff !important;
+    padding: 0 15px;
+    text-decoration: none;
+    border-right: 2px solid #ffffff;
+}
+
+/* 按钮样式 */
+.button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px;
+    background: #008000;
+    color: #ffffff !important;
+    border: 2px outset #00ff00;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #006400;
+}
+
+input, textarea {
+    background: #ffffff;
+    border: 2px inset #808080;
+    padding: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+/* 经典marquee效果（需要HTML配合） */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background: #ffff00;
+    color: #ff0000;
+    padding: 5px;
+    border: 2px dotted #ff0000;
+}
+
+.counter {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #000000;
+    color: #00ff00;
+    padding: 5px;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #808080;
+}
+
+/* 经典的框架边框效果 */
+.frame {
+    border: 3px ridge #c0c0c0;
+    padding: 10px;
+    margin: 15px 0;
+    background: #ffffff;
+}
+
+/* 90年代末/00年代初的经典配色 */
+.alert {
+    background: #fffacd;
+    border: 2px solid #ffd700;
+    padding: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+}

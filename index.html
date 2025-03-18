@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunch233's blog</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <script type="text/javascript">
+        //页面数据处理
+        window.onload = function() {
+            // 获取JSON数据
+            fetch('/posts/posts.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    //表格
+                    const container = document.getElementById('posts-table');
+                    const table = document.createElement('table');
+
+                    //表头
+                    const thead = document.createElement('thead');
+                    const headerRow = document.createElement('tr');
+
+                    if (data.length > 0) {
+                        Object.keys(data[0]).forEach(key => {
+                            const th = document.createElement('th');
+                            th.textContent = key.charAt(0).toUpperCase() + key.slice(1); //首字母大写
+                            headerRow.appendChild(th);
+                        });
+                    }
+
+                    thead.appendChild(headerRow);
+                    table.appendChild(thead);
+
+                    //表体
+                    const tbody = document.createElement('tbody');
+
+                    data.forEach((post, index) => {
+                        const row = document.createElement('tr');
+
+                        var i = 0;
+                        Object.values(post).forEach(value => {
+                            const td = document.createElement('td');
+                            if(i === 0){ //默认第一项是文章标题，点击进入
+                                td.innerHTML = '<a href="/post.html?id=' + index + '">' + value + '</a>';
+                            }else{
+                                td.innerText = value;
+                            }
+                            row.appendChild(td);
+                            ++i;
+                        });
+
+                        tbody.appendChild(row);
+                    });
+
+                    table.appendChild(tbody);
+                    container.appendChild(table);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('posts-table').innerHTML =
+                        '<p>Error loading data: ' + error.message + '</p>';
+                });
+        };
+    </script>
+</head>
+<body>
+<div class="frame">
+    <h1 class="notice">Sunch233's blog —— 闲杂信息集散地</h1>
+    <div class="marquee">
+        <marquee>[W.I.P]此blog网站仍然不完善，正在建设中...</marquee>
+    </div>
+    <div class="navbar">
+        <a href="/">返回首页</a>
+        <a href="https://www.axe.ink/">生存斧服务器官网</a>
+    </div>
+
+    <div id="posts-table"> </div>
+    <div class="counter">
+        ©2025 Sunch233's blog
+    </div>
+</div>
+</body>
+</body>
+</html>
