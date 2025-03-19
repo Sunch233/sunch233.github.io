@@ -59,6 +59,8 @@
 
                     table.appendChild(tbody);
                     container.appendChild(table);
+
+                    document.getElementById('posts-count').innerText = '文章数: ' + data.length
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -81,6 +83,8 @@
 
     <div id="posts-table"> </div>
     <div class="counter">
+        --博客信息--
+        <div id="posts-count"></div><br>
         ©2025 Sunch233's blog
     </div>
 </div>
